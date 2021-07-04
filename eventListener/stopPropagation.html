@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                border-style: solid;
+                margin: 20px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div1">
+            div1
+            <div class="div2">
+                div2
+                <div class="div3">
+                    div3
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const divs = document.querySelectorAll('div');
+
+            divs.forEach(function(div) {
+                div.addEventListener("click", function(e){
+                    // e.stopPropagation();
+                    alert(e.currentTarget.className, "클릭");
+                });
+            });
+
+       </script>
+    </body>
+</html>

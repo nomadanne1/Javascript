@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button{
+                background-color:yellow;
+                border-style: none;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button class="btn-number">1</button>
+            <button class="btn-number">2</button>
+            <button class="btn-number">3</button>
+            <button class="btn-number">4</button>
+            <button class="btn-number">5</button>   
+        </div>
+
+        <script>
+            // const btns = document.querySelectorAll('.btn-number');
+
+            // btns.forEach(function(btn) {
+            //     btn.addEventListener("click", function(e){
+            //         alert(e.target.innerHTML, "클릭");
+            //     });
+            // });
+
+            // 이벤트 위임
+            const div = document.querySelector('div');
+
+            div.addEventListener("click", function(e){
+                alert(e.target.innerHTML, "클릭");
+            });
+
+       </script>
+    </body>
+</html>
