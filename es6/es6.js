@@ -63,20 +63,96 @@
 //     }
 // }
 
-// Spread Syntax (얕은 복사!!) 07:33
+// Spread Syntax (얕은 복사!!) 
+// {
+//     const obj1 = { key: 'key1'};
+//     const obj2 = { key: 'key2'};
+//     const array = [obj1, obj2]; // Object를 담고 있는 배열
+
+//     // ♪ array copy (배열 복사)
+//     const arrayCopy = [...array] 
+//     console.log(array, arrayCopy); 
+
+//     const arrayCopy2 = [...array, { key: 'key3' }];
+//     console.log(array, arrayCopy, arrayCopy2);
+
+//     // ♪ objet copy
+//     const obj3 = { ...obj1 };
+//     console.log(obj3);
+
+//     // ♪ array concatenation
+//     const fruits1 = ['복숭아', '포도'];
+//     const fruits2 = ['바나나', '키위'];
+//     const fruits = [...fruits1, ...fruits2];
+//     console.log(fruits); // [ '복숭아', '포도', '바나나', '키위' ]
+
+//     // ♪ object merge 
+//     const dog1 = { dog1 : '치와와'};
+//     const dog2 = { dog2 : '비글'};
+//     const dog = { ...dog1,...dog2}; // cf. dog: '치와와', dog: '비글' >> 키값 같다면 마지막에 오는 애가 덮어씌운다.
+//     console.log(dog); // { dog1: '치와와', dog2: '비글' }  
+// }
+
+// Default parameters
+// {
+//     function printMessage(message) {
+//         console.log(message);
+//     }
+//     printMessage('hello'); // hello
+//     printMessage(); // undefined
+// }
+// // 대안
+// {
+//     function printMessage(message) {
+//         if (message == null){
+//             message = 'defualt message';
+//         }
+//         console.log(message);
+//     }
+//     printMessage('hello'); // hello
+//     printMessage(); // 'defualt message'
+// }
+// // ♪ >> 코드깔끔해짐
+// {
+//     function printMessage(message = 'default message') {
+//         console.log(message);
+//     }
+//     printMessage('hello'); // hello
+//     printMessage(); // default message
+// }
+
+// Ternary Operator
+// const isCat = true;
+// { 
+//     {
+//         let component;
+//         if (isCat){
+//             component ='cat';
+//         }else {
+//             component = 'dog';
+//         }
+//         console.log(component);
+//     }
+// }
+
+// // ♪ 
+// {
+//     const component = isCat ? 'cat' : 'dog';
+//     console.log(component);
+//     console.log(isCat ? 'cat' : 'dog');
+// }
+
+// Template Literals
+
 {
-    const obj1 = { key: 'key1'};
-    const obj2 = { key: 'key2'};
-    const array = [obj1, obj2]; // Object를 담고 있는 배열
+    const weather = 'sun';
+    const temparature = '16˚c'
+    
+    //
+    console.log(
+        'Today weather is ' + weather + ' and temparature is ' + temparature
+    );
 
-    // array copy (배열 복사)
-    const arrayCopy = [...array] 
-    console.log(array, arrayCopy); 
-
-    const arrayCopy2 = [...array, { key: 'key3' }];
-    console.log(array, arrayCopy, arrayCopy2);
-
-    // objet copy
-    const obj3 = { ...obj1 };
-    console.log(obj3);
+    // ♪ 
+    console.log(`Today weather is ${weather} and temparature is ${temparature}`);
 }
