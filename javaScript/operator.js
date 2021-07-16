@@ -63,3 +63,22 @@ function check(){
     }
     return true;
 }
+
+
+// ! (not)
+console.log(!value1); // false
+
+// 7. Equality
+const stringFive = '5';
+const numberFive = 5;
+
+// == loose equality, with type conversion
+console.log(stringFive == numberFive);
+console.log(stringFive != numberFive);
+
+// === strict equality, no type conversion
+console.log(stringFive === numberFive);
+console.log(stringFive !== numberFive);
+
+
+
