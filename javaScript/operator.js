@@ -64,7 +64,6 @@ function check(){
     return true;
 }
 
-
 // ! (not)
 console.log(!value1); // false
 
