@@ -101,13 +101,17 @@ class Shape {
     getArea() {
         return this.width * this.height;
     }
+
+    toString() {
+        return `Triangle: color: ${this.color}`;
+    }
 }
 
 class Rectangle extends Shape {}
 class Triangle extends Shape {
     draw() {
         super.draw();
-        console.log('확장')
+        console.log('기능 확장') // 기능 확장
     }
     getArea() { // 오버라이딩 (재정의)
         return (this.width * this.height) / 2;
@@ -115,8 +119,17 @@ class Triangle extends Shape {
 }
 
 const rectangle = new Rectangle(20, 20, 'blue');
-rectangle.draw(); 
-console.log(rectangle.getArea());
+rectangle.draw(); // drawing blue color of
+console.log(rectangle.getArea()); // 400
 const triangle = new Triangle(20, 20, 'red');
-triangle.draw();
-console.log(triangle.getArea());
+triangle.draw(); // drawing red color of /n 기능 확장
+console.log(triangle.getArea()); // 200
+
+// 6. Class checking instanceOf 
+// 왼쪽에 있는 Object가 오른쪽에 클래스로 만들어진 것인지 boolean으로 리턴
+console.log(rectangle instanceof Rectangle); // true
+console.log(triangle instanceof Rectangle); // false
+console.log(triangle instanceof Triangle); // true
+console.log(triangle instanceof Shape); // true
+console.log(triangle instanceof Object); // true
+console.log(triangle.toString);
