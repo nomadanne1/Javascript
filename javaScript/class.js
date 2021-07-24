@@ -117,7 +117,7 @@ class Triangle extends Shape {
         return (this.width * this.height) / 2;
     }
 }
-
+ 
 const rectangle = new Rectangle(20, 20, 'blue');
 rectangle.draw(); // drawing blue color of
 console.log(rectangle.getArea()); // 400
