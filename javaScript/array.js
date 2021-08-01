@@ -88,3 +88,11 @@ console.log(fruits.indexOf('watermelon')); // 2
 console.log(fruits.includes('coconut')); // false
 console.log(fruits.includes('melon')); // true
 
+// lastIndexOf
+console.clear();
+fruits.push('apple');
+console.log(fruits);
+console.log(fruits.indexOf('apple')); // 0
+console.log(fruits.lastIndexOf('apple')); // 5
+
+
