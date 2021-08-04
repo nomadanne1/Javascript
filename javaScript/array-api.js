@@ -96,3 +96,22 @@ console.clear();
     const result = students.reduce((prev, curr) => prev + curr.score, 0);
     console.log(result / students.length);
 }
+
+// Q10. make a string containing all the scores 
+// result should be: '80, 90, 66, 88'
+{
+    const result =students
+    .map(student => student.score)
+    .filter((score) => score >= 50)
+    .join();
+    console.log(result); // 80,90,66,88
+}
+
+// Bonus! do Q10 sorted in ascending order
+// result should be: '45, 66, 80, 88, 90'
+{
+    const result = students.map(student => student.score)
+    .sort((a, b)=>(a-b))
+    .join();
+    console.log(result); // 45,66,80,88,90
+}
