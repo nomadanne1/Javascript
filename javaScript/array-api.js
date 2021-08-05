@@ -29,7 +29,6 @@
     const result = array.slice(2, 5); // 배열의 특정한 부분을 리턴
     console.log(result); // [ 3, 4, 5 ]
     console.log(array); // [ 1, 2, 3, 4, 5 ]
-
 }
 
 class Student {
