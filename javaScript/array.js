@@ -1,5 +1,4 @@
 'user strict';
-
 // Array
 // 1. Declaration
 const arr1 = new Array();
@@ -30,7 +29,6 @@ for (let fruit of fruits) {
 // fruits.forEach(function(fruit, index, array){
 //     // console.log('he'); // he 두번 출력 (데이터가 2개 들어있으니깐.)
 //     console.log(fruit, index, array);
-
 // }); // ctrl + forEach 클릭 >> api선언된 곳으로 이동함
 
 // forEach >> 배열안에 들어있는 value들 마다 내가 전달한 함수를 출력한다.
@@ -66,6 +64,7 @@ console.log(fruits);
 // splice: remove an item by index position
 fruits.push('strewberry', 'peach', 'remon');
 console.log(fruits); // [ 'apple', 'banana', 'strewberry', 'peach', 'remon' ]
+
 // fruits.splice(1) // 원하는 갯수 말안하면? 해당 인덱스부터 다 지워짐
 fruits.splice(1, 1);
 console.log(fruits); //  [ 'apple', 'strewberry', 'peach', 'remon' ]
