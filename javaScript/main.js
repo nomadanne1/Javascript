@@ -38,3 +38,24 @@ const num = 2;
 // obj.name = 'James'; 
 // >> object에는 가르키는 레퍼런스(주소)를 가르키고 있기 때문에 
 // >> obj.name = 'James'로 변경이 가능하다 !!
+
+// boolean && 연산자
+
+// false: 0, -0, '', null, undefined
+// true: -1, 'hello', []
+let num1; // undefined
+if (num1){
+    console.log('true!')
+}
+
+// *위에있는 코드와 같은 코드 (한줄로 깔끔)
+num1 && console.log(num1); // num1이 false이기 때문에 console.log(num1) 실행xx
+
+let obj; //undefined
+if (obj) {
+    console.log(obj);
+}
+
+obj && console.log(obj.name);
+// console.log(obj.name) 없다면 바로 오류 발생
+// obj가 false면 뒤에를 아예 실행하지 않도록!!
