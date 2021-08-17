@@ -49,13 +49,43 @@ if (num1){
 }
 
 // *위에있는 코드와 같은 코드 (한줄로 깔끔)
-num1 && console.log(num1); // num1이 false이기 때문에 console.log(num1) 실행xx
+// num1 && console.log(num1); // num1이 false이기 때문에 console.log(num1) 실행xx
 
-let obj; //undefined
-if (obj) {
-    console.log(obj);
-}
+// let obj; //undefined
+// if (obj) {
+//     console.log(obj);
+// }
 
 obj && console.log(obj.name);
 // console.log(obj.name) 없다면 바로 오류 발생
 // obj가 false면 뒤에를 아예 실행하지 않도록!!
+
+class Counter {
+    constructor(runEveryFiveTimes){
+        this.counter = 0;
+        this.callback = runEveryFiveTimes;
+    }
+
+    increase(){ // class애서 함수 선언할때 function 생략가능
+        this.counter++;
+        console.log(this.counter);
+        if(this.counter %5 === 0){
+            // runIf5Times(this.counter)
+            this.callback && this.callback(this.counter); // callback이 있다면 && 뒤에 실행
+        }
+    }
+}
+
+const coolCounter = new Counter();
+function printSomething(num){
+    console.log(`yo! ${num}`)
+}
+
+const printCoutner = new Counter(printSomething);
+const alertCoutner = new Couenter(alertNum);
+
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
+coolCounter.increase(printSomething);
