@@ -27,3 +27,16 @@ const shirt0 = Object.asssign(item, detail);
 
 // Better! Code
 const shirt = { ...item, ...detail, price: 40}; // price 20 >> 40 으로 업데이트 가능 
+
+// Spread Syntax - Array
+let fruits = ['apple', 'banana', 'orange'];
+
+// fruits.push('grape');
+fruits = [...fruits, 'grape']; // 배열을 새로 만듦
+
+// fruits.unshift('blue berry');
+fruits = ['blue berry', ...fruits];
+
+const fruits2 = ['kiwi', 'peach', 'melone'];
+let combined = fruits.concat(fruits2);
+combined = [...fruits, 'cherry',...fruits2];
