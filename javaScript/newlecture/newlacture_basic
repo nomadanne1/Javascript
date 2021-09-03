@@ -35,3 +35,10 @@ ex. 로그인 > 폼 객체의 유효성 검사 > 제어할 수 있는 언어가 
 
     </body>
 </html>
+
+05. 데이터 객체와 래퍼 클래스
+
+- 일반적인 언어의 값의 종류와 변수: 정수. 실수. 문자, 문자열
+- javaScript에서는 기본형식이 없고 Wrapper형 클래스만 있다.
+    정수/ 실수: Number, 문자/ 문자열: String, 불리안: Boolean
+    ex) var x = new Number(3); === var x = 3; // var z; z == undefined
