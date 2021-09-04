@@ -40,5 +40,43 @@ ex. 로그인 > 폼 객체의 유효성 검사 > 제어할 수 있는 언어가 
 
 - 일반적인 언어의 값의 종류와 변수: 정수. 실수. 문자, 문자열
 - javaScript에서는 기본형식이 없고 Wrapper형 클래스만 있다.
-    정수/ 실수: Number, 문자/ 문자열: String, 불리안: Boolean
-    ex) var x = new Number(3); === var x = 3; // var z; z == undefined
+   정수/ 실수: Number, 문자/ 문자열: String, 불리안: Boolean
+   ex) var x = new Number(3); === var x = 3; // var z; z == undefined
+
+06. 배열(Array) 생성과 사용하기
+
+ [배열 객체]
+
+  - push / pop 메소드를 이용한 데이터 관리 : Stack
+    *pop을 통해 호출된 값은 사라진다 
+
+    var nums = new Array();
+
+    nums.push(5);   var n1 = nums.pop();
+    alert(nums);    alert(nums);
+    
+    nums.push(10);  var n2 = nums.pop();
+    alert(nums);    alert(nums);
+
+    nums.push(21);  var n3 = nums.pop();
+    alert(nums);    alert(nums);
+
+  - 인덱스를 이용한 데이터 관리 : List
+
+    var nums = new Array();
+
+    nums[0] = 5;    alert(nums[0]);
+    alert(nums);
+
+    nums[1] = 10;   alert(nums[1]);
+    alert(nums);
+
+    nums[2] = 21;
+    alert(nums);
+
+ ex) var nums = new Array();
+
+    nums[3] = 5;
+    alert(nums);
+
+    alert(nums.length); // 4 *0, 1, 2 비어있는 공간이 만들어진다
