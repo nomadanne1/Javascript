@@ -18,3 +18,11 @@ nums.pop();
 console.log(nums);
 nums.pop();
 console.log(nums);
+
+// splice
+
+var nums = new Array(2, 3, "hello", 7);
+console.log(nums);
+
+nums.splice(2);
+console.log(nums);

@@ -80,3 +80,37 @@ ex. 로그인 > 폼 객체의 유효성 검사 > 제어할 수 있는 언어가 
     alert(nums);
 
     alert(nums.length); // 4 *0, 1, 2 비어있는 공간이 만들어진다
+
+07. 배열 초기화와 조작하기
+
+ [배열 객체 초기화]
+
+ var nums = new Array();
+
+ - 5개의 공간을 미리 준비함
+ var nums = new Array(5);
+
+ - 2개 이상의 값을 입력할 경우 > 초기값으로 인식 
+ var nums = new Array(5, 10, 21); 
+
+ - javascript는 배열 어떤 데이터도 받을 수 있음 
+  (주의: 모든 것을 담을 수 있지만 그래서 오류를 범할 수도 있음)
+ var nums - new Array(5, 10, 21, "Hello") 
+ * alert(typeof nums[3]); 
+
+ var nums = new Array(5, 10, 21, "hello", new Array(2, 3, 4));
+ * 3을 꺼내고 싶으면 > alert(nums[4][1]);
+
+ [배열 객체 조작]
+
+ - splice() 메소드를 이용한 데이터 관리 : List
+ * 삭제, 대체, 삽입
+
+ var nums = new Array(5, 10, 21, "hello");
+ nums.splice(1); // 1번째 위치부터 다 지워진다
+ nums.splice(1,1); // 1번째 위치에서 하나만 지워진다.
+ nums.splice(1,1,"hoho"); // 1번째 위치에서 하나만 지우고 그자리 "hoho"로 대체 > 대체
+ nums.splice(1,0,"hoho"); // 1번째 위치에 "hoho"삽입 > 삽입
+
+
+
