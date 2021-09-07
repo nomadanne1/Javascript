@@ -139,7 +139,20 @@ ex. 로그인 > 폼 객체의 유효성 검사 > 제어할 수 있는 언어가 
 
  alert(exam["kor"]);
 
- *변수에 담겨진 문자열을 이용해서 객체의 속성을 꺼내야할때 / 값을 대입해야 할때 사용.
+ *변수에 담겨진 문자열을 이용해서 객체의 속성을 꺼내야할때 / 값을 대입해야 할때 사용. => ??
+
+ 09. JSON
+
+ [ Javascirpt 데이터 객체와 JSON 생성 방법 ]
+
+          JavaScript Object                 JavaScirpt Object Notation(JSON)
+
+Boolean   var n = new Boolean(true);        var n = true;
+Number    var n = new Number(3);            var n = 3;
+String    var s = new String("hello");      var s = "hello";   var s = 'hello';
+Array     var ar = new Array();             var ar = [];
+Object    var ob = new Object();            var ob = {};
+ 
 
 
 
