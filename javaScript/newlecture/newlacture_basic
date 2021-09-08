@@ -152,7 +152,25 @@ Number    var n = new Number(3);            var n = 3;
 String    var s = new String("hello");      var s = "hello";   var s = 'hello';
 Array     var ar = new Array();             var ar = [];
 Object    var ob = new Object();            var ob = {};
+
+ [ JSON의 중첨 표현 ] 
  
+ var notice = [
+                {"id":1, "title":"hello json"},
+                {"id":2, "title":"hi json"},
+                {"id":3, "title":"json is"},
+              ];
+
+notice[1] //{{"id":2, "title":"hi json"}}
+
+10. eval 함수와 JSON 파싱하기
+
+*외부에서 넘겨받은 파일일경우 
+'{ "id":1, "title":"hello" }' => 문자열로 넘겨진다 
+
+객체화 할 수 있는 방법은? 
+1. eval()
+2. JSON.paser();
 
 
 
