@@ -176,5 +176,29 @@ notice[1] //{{"id":2, "title":"hi json"}}
 
 *JSON parser() <> JSON.stringfy();
 
+12. 자바스크립트 연산자
+
+===, !== 연산자
+
+var x = 3;
+var y = 3;
+
+== 값을 비교하는 연산
+document.write( x == y); // ture 
+
+=== 주소를 비교하는 연산 
+document.write( x === y); // true 
+?! 똑같은 값을 가진 박스를 안만들고 주소만 참조해 준다.
+다른박스 만들고 싶으면 var y = new Number(3);
+
+3 + "4" // 34
+3.5 + "4" // 3.54
+3.5 - "2" // 1.5 ?? 
+=> 덧셈을 할때는 다 문자열, 뺄셈을 할때는 문자열이 숫자가 된다.
+
+console.log(5 < 3 + 4); // true
+console.log("32" > "4"); // false
+console.log(32 > "4"); // true
+
 
 
