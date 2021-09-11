@@ -200,5 +200,14 @@ console.log(5 < 3 + 4); // true
 console.log("32" > "4"); // false
 console.log(32 > "4"); // true
 
+13. 자바스크립트 제어구조
+
+- 조건문: if, while, do-while
+- 반복문: while, for, for-in
+- 선택문: else, else if, switch
+
+* for-in문
+
+
 
 
