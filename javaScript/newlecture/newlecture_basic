@@ -207,7 +207,29 @@ console.log(32 > "4"); // true
 - 선택문: else, else if, switch
 
 * for-in문
+i<ar.length; i++; 조건이랑 증감하는 부분이 생략됨.
 
+14. 함수 객체와 표현식
+
+함수?? 대입?? 객체??
+
+int add(int x, int y){   
+  return x+y; 
+}
+
+=> 자바스크립트의 함수
+var add = new Function("x, y", "return x+y;");   
+alert(add(3, 4));
+
+=> 자바스크립트의 함수 표현식1 (제일 많이사용)
+var add = function(x,y){
+  return x+y;
+}; // ; 사용
+
+=> 자바스크립트의 함수 표현식2
+function add(x, y){
+  return x+y;
+} // ; 사용안함
 
 
 
