@@ -341,5 +341,42 @@ var sum = add(2, 3, "hello", 3, 4, 5, 6, 7, 88) // 5
 내가 남을 클로즈 할 수 있는 키를 가지고 있다 ! 라고 생각하면 된다.
 ( 함수내에서 자기것 위에 있는 자원을 쓰면서 물고있는 경우가 있다.. )
 
+18. window 플랫폼을 이용한 대화 parseInt, alert, prompt, confirm
+
+>> HTML5에서 확장된 플랫폼의 기능
+
+[ UI (동적문서) ]
+1. Document Object
+2. Cascading Style Sheets
+
+[ HTML5 API 멀티미디어 네트워크통신 로컬저장소 ]
+3. Graphics and Media
+4. Web Appliation Appliation
+5. Internet Platform Appliation
+
+>> 브라우저 객체
+
+window
+window.location
+window.history
+window.document : body> img / form> input...
+
+1. 최상위 객체인 window 객체
+
+window 객체의 Members : 사용자와 상호작용을 위한 기본 도구
+
+[ Methods ]
+
+ alert()
+  - window.alert(x + y).., > window는 생략 가능
+ 
+ confirm()
+
+ prompt()
+  - 입력값은 string으로 전달되는 것 주의 !! 
+  -  parseInt() 사용해서 숫자로 변경
+  -  cf. parseInt("abc"); // return NaN (Not a Number);
+         parseInt("12abc"); // return 12 (뒤에 문자 자동 탈락 시켜주는 기능도 있다는것 알아 두기 !!)
+
 
 
