@@ -378,5 +378,33 @@ window 객체의 Members : 사용자와 상호작용을 위한 기본 도구
   -  cf. parseInt("abc"); // return NaN (Not a Number);
          parseInt("12abc"); // return 12 (뒤에 문자 자동 탈락 시켜주는 기능도 있다는것 알아 두기 !!)
 
+19. 이벤트 기반의 프로그래밍
 
+1. 스크립트 코드 작성 영역 
+  <script>
+    // 페이지가 읽혀질 때 실행
+  </script>
 
+2. 또 다른 스크립트 코드 영역
+  <input onXXX=" "/> // 이벤트가 발생할 때 실행
+
+  <input onclick=" "/>
+  <input onmuseover=" "/>
+
+[ 이벤트와 함수 호출 ]
+
+- 덧셈 결과 출력하기
+
+<input type="button" value="출력" onclick="var x, y; x=prompt('x 값을 입력하세요')..." /> 
+// 가능은 하나 가독성이 떨어진다
+
+<script>
+  function printResult()
+  {
+    var x, y;
+    x = prompt("x 값을 입력하세요", 0);
+    y = prompt("y 값을 입력하세요", 0);
+    alert(x + y);
+  }
+</script>
+<input type="button" value="출력" onclick="printResult();" />
