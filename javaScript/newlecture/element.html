@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-    </head>
-    <body>
         <script>
             function printResult(){
-                // var x = prompt("x 값을 입력하세요", 0);
-                // var y = prompt("y 값을 입력하세요", 0);
+                var x = prompt("x 값을 입력하세요", 0);
+                var y = prompt("y 값을 입력하세요", 0);
 
-                // x = parseInt(x);
-                // y = parseInt(y);
+                x = parseInt(x);
+                y = parseInt(y);
 
                 // alert(x+y);
-                // btnPrint.value=x+y;
+                var btnPrint = document.getElementById("btn-print");
+                btnPrint.value=x+y;
                 // span1.innerText = x+y; // span은 value값이 없으니깐 innterText 사용 *html 공부 !
-                btnPrint.type="text"
-
+                // btnPrint.type="text"
             }
+            
+            // 함수를 대입 *printResult(); 를 넣으면 함수 결과값을 넣는것 !! 
+            // btnPrint.onclick = printResult; 
+            
+            // 이런식으로 더 깔끔하게 쓸 수도 있다. 
+
+            // 그러나 script위치가 input(id="btnPrint") 있으면 오류 발생 !!
+            // (btnPrint 객체가 만들어지기 전에 사용하려 하기 때문에)
+
+            // 해결1. script 위치를 input 아래에 둔다.
+            // 해결2. 
+            // cf. 모든 엘리먼트는 onload라는 이벤트를 가지고 있다
+            // window.onload 되었을때 실행하도록 한다!!
+            function init(){
+                var btnPrint = document.getElementById("btn-print");
+                btnPrint.onclick = printResult;
+            }
+            window.onload = init; // window load가 완료되면 실행!
         </script>
-        <input type="button" value="클릭" onclick="printResult();" id="btnPrint" /><br />
+    </head>
+    <body>
+        <!-- <input type="button" value="클릭" onclick="printResult();" id="btnPrint" /><br /> -->
+        <!-- <input type="button" value="출력" id="btnPrint" /><br /> -->
+        <input type="button" value="출력" id="btn-print" /><br /> <!-- 올바른 id 명명 규칙 사용 -->
         <span id="span1" onclick="alert('hello');"> 스팬입니다. </span>
     </body>
 </html>

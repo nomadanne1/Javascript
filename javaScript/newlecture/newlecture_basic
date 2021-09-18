@@ -411,11 +411,24 @@ window 객체의 Members : 사용자와 상호작용을 위한 기본 도구
 
 20. 문서의 엘리먼트 객체 이용하기
 
-자바스크립트를 위한 입/출력 객체
+[ 자바스크립트를 위한 입/출력 객체 ]
+
 - html요소들을 객체화 하는 로드 과정이 포함됨
  > html파일
  > (load) Document Object (객체 트리 in Memory) // element 노드, text 노드, 주석 노드...
  > (Show) 사용자 인터페이스
 
-스크립트 작성 방식
+[ 스크립트 작성 방식 ]
 - 문서 객체의 속성 사용하기 // id 부여
+- 객체 생성과 사용 시점의 문제
+
+21. 코드 초기화와 엘리먼트 객체 사용하기
+
+- 객체 아이디 명명 방법의 문제
+id = "btnPrint" 
+
+명명 규칙 => btn-print 그러나 script에서 btn-print.onclick 호출시 오류!! 
+var btnPrint = document.getElementById("btn-print"); 이렇게 꺼내서 사용하는 것이 정석이다.
+
+*document.getElementById() // 많은 것을 담고 있는 보따리
+
