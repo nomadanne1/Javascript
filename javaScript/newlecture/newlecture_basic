@@ -432,3 +432,28 @@ var btnPrint = document.getElementById("btn-print"); 이렇게 꺼내서 사용�
 
 *document.getElementById() // 많은 것을 담고 있는 보따리
 
+22. 스크립트 코드의 지역화
+
+명명할 필요가 없는 함수 (이름이 필요해서 굳이 만든 함수) 
+1. 이름을 명명하지 않고 이벤트 함수 바로 대입
+2. var btnPrint = document.getElementById("btn-print"); 한번만 했으면 좋겠다!!
+
+<script>
+  window.onload = function(){ // 익명함수 사용 , 캡슐화 (스크립트 코드의 지역화)
+    var btnPrint = document.getElementById("btn-print");
+
+    var add = function(x, y){
+      return x + y;
+    }
+
+    btnPrint.onclick = function(){
+      var x = prompt("x 값을 입력하세요", 0);
+      var y = prompt("y 값을 입력하세요", 0);
+
+      x = parseInt(x);
+      y = parseInt(y);
+      btnPrint.value= x+y;
+    };
+  }
+</script>
+
