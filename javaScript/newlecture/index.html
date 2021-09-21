@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="index.js"></script>
+        <script src="test.js"></script>
+        <!-- test.js가  index.js를 덮어씌어 버림. (test.js만 실행) -->
+        <!-- window.onload = function(){}.. => window.addEventListener("load", function(){} 해결 !! -->
+    </head>
+    <body>
+        <input type="button" value="클릭" id="btn-print" /> <br />
+        <span id="sapn1">스팬입니다.</span>
+    </body>
+</html>

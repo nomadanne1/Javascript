@@ -457,3 +457,34 @@ var btnPrint = document.getElementById("btn-print"); 이렇게 꺼내서 사용�
   }
 </script>
 
+23. 코드분리와 이벤트 바인딩 방법 두 가지
+
+[ 스크립트 작성 방식 ]
+
+- 익명 함수를 이용한 이벤트 핸들링
+
+- View와 Controller를 물리적으로 나누기
+  1. index.html, index.js 분리 
+  2. <script src="index.js"></script>로 연결
+
+    <head>
+        <script src="index.js"></script>
+        <script src="test.js"></script>
+    </head>
+
+     test.js window가 로드될때 실행되는 함수가 index.js를 덮어씌어 버림
+     => test.js만 실행된다. (서로 영향을 주게 된다.)  
+
+     여러 스크립트 파일을 함께 사용할 때 초기화 함수의 문제
+
+    ★ 덮어씌어버리지 않고 누적되게 해주는 함수 사용 !!
+    (일반적으로 load라는 함수에 이벤트를 바인딩할때는 addEventListener를 사용해야한다.)
+
+    window.addEventListener("load", function(){
+      alert("test1");
+    });
+    window.addEventListener("load", function(){
+      alert("test2");
+    });
+
+
