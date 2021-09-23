@@ -1,1 +1,21 @@
 24. 첫 예제 간단한 계산기 프로그램 만들기
+
+25. 노드 선택 방법 계산하기
+
+[ 하위 엘리먼트 선택하기 ]
+- .getElementsByTagName();
+- .getElementsByClassName();
+
+<section id="sec1">
+    <h1></h1>
+    <ul>
+        <li>번호1</li>
+        <li>번호2</li>
+        <li>번호3</li>
+    </ul>
+</section>
+
+var lis = sec1.getElementsByTagName("li");
+lis[0].textContent = "Hello"; // .textContent (웹표준) == .innerText
+
+
