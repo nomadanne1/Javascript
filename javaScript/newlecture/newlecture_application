@@ -34,3 +34,19 @@ css selector 사용 (querySelector/ querySelectorAll)
 
 childNodes : *주의! comment(주석), text(white space등)... 도 자식 !!
 children : 태그 형태만 자식으로 취급한다.
+
+28. Node의 종류와 개체 형식
+
+[ 문서를 구성하는 Node의 종류(Type)들 ]
+
+Document
+    - DocumentType          : <!DOCTYPE ... >
+    - Element               : <textarea><p><font>...
+        - Attr              : <textarea rows="30", cols="40">
+        - Entity            : &lt;뉴렉처&gt; &nbsp; // lt, gt, nbsp
+        - EntityReference   : &lt;뉴렉처&gt; &nbsp; // &;
+        - Text              : <p>뉴렉처</p>
+    - Comment               : <!--주석-->
+    - CDATASection          : <![CDATA[<,>,]]>
+    - Notation              : <font color="#ffff00" size="10px">  // #ffff00, 10px
+
