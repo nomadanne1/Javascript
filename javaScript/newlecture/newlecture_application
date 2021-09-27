@@ -48,5 +48,12 @@ Document
         - Text              : <p>뉴렉처</p>
     - Comment               : <!--주석-->
     - CDATASection          : <![CDATA[<,>,]]>
-    - Notation              : <font color="#ffff00" size="10px">  // #ffff00, 10px
+    - Notation              : <font color="#ffff00" size="10px"> // #ffff00, 10px
+
+29. Node 인터페이스
+
+www.w3.org/TR (기술문서)
+https://www.w3.org/TR/2018/WD-dom41-20180201/#introduction-to-the-dom
+
+
 
