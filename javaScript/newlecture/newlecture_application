@@ -66,7 +66,16 @@ https://www.w3.org/TR/2018/WD-dom41-20180201/#introduction-to-the-dom
 var img1 = document.getElementById("img1");
 img1.??? // img 속성과 거의 일치함
 
+31. CSS 스타일 속성 변경
 
+[ style 속성을 이용해서 스타일 변경하기 ]
 
+img1.src = txt1.value; // img 엘리먼트가 가지고 있는 속성
+txt.style.border = "10px solid red"; // style이 가지고 있는 속성
+
+- style 속성은 항상 문자열!! (수치도 꼭 써워야 함)
+  txt1.style.width= 100; // xxx
+  txt1.style.width= "100"; // xxx
+  txt1.style.width= "100px"; // ok
 
 
