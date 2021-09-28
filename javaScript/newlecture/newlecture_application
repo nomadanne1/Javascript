@@ -55,5 +55,18 @@ Document
 www.w3.org/TR (기술문서)
 https://www.w3.org/TR/2018/WD-dom41-20180201/#introduction-to-the-dom
 
+30. 엘리먼트 노드의 속성 다루기 (속성 변경 예제)
+
+[ 엘리먼트 객체의 속성을 사용하기 ]
+
+- HTML 태그의 속성과 객체의 속성은 거의 일치
+<input type="text" id="txt1" value="" />
+<img src="pic1.jpg" id="img1" />
+
+var img1 = document.getElementById("img1");
+img1.??? // img 속성과 거의 일치함
+
+
+
 
 
