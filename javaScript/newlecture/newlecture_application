@@ -78,4 +78,23 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
   txt1.style.width= "100"; // xxx
   txt1.style.width= "100px"; // ok
 
+32. 텍스트 노드를 동적으로 추가 / 삭제
+
+[ 자바 스크립트를 위한 입/ 출력 객체 ]
+
+- 현재 문서에 문자열 추가하기: 현재 document 트리에 노드 추가
+- document 객체의 기능: 문서의 자식 노드 객체 생성
+    ex) Element: createElement(in DOMStirng tag Name)
+    Text: createTextNode(in DOMString data)..
+- 노드 조작하기: appendChild, removeChild.. 
+- 텍스트 노드 추가하기 
+    1. 텍스트 노드 생성
+      var txt = document.createTextNode("안녕하세요.");
+    2. 텍스트 노드를 추가할 엘리먼트 노드 선택
+      var div1 = document.getElementById("div1");
+    3. 엘리먼트 노드에 텍스트 노드 추가하기
+      div.appendChild(txt);
+
+
+
 
