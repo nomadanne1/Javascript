@@ -3,19 +3,51 @@ window.addEventListener("load", function(){
     var section = document.querySelector("#section6");
     
     var titleInput = section.querySelector(".title-input");
-    var menuListDiv = section.querySelector(".menu-list");
+    var menuListUI = section.querySelector(".menu-list");
     var addButton = section.querySelector(".add-button");
     var delButton = section.querySelector(".del-button");
 
     addButton.onclick = function(){
         var title = titleInput.value;
+
+        var html = '<a href="">'+title+'</a>';
+        var li = document.createElement("li");
+        li.innerHTML = html;
+
+        // menuListUI.appendChild(li); 
+        
+        // menuListUI.appendChild(title); // 오류 (createTextNode 필수)
+        menuListUI.append(title); // append는 문자열도 바로 가능 !!
+        menuListUI.append(li); // append는 문자열도 바로 가능 !!
+
+        // menuListUI.innerHTML += '<li><a href="">'+title+'</a></li>'; // 성능에 문제.
+
+        /*
+        // 이렇게 만드는 경우 없음 !!
+        var title = titleInput.value;
         var txtNode = document.createTextNode(title);
-        menuListDiv.appendChild(txtNode);
+        
+        var aNode = document.createElement("a");
+        aNode.href="";
+        aNode.appendChild(txtNode);
+
+        var liNode = document.createElement("li");
+        liNode.appendChild(aNode);
+
+        menuListUI.appendChild(liNode);
+        */
+
+        // var title = titleInput.value;
+        // var txtNode = document.createTextNode(title);
+        // menuListDiv.appendChild(txtNode);
     };
 
     delButton.onclick = function(){
-        var txtNode = menuListDiv.childNodes[0];
-        menuListDiv.removeChild(txtNode);
+        // var txtNode = menuListUI.childNodes[0];
+        var liNode = menuListUI.children[0];
+        // menuListUI.removeChild(txtNode);
+
+        liNode.remove(); // 부모를 통할 필요없이 내가 삭제 가능 !!
     };
 });
 

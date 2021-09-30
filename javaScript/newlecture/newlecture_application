@@ -95,6 +95,6 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
     3. 엘리먼트 노드에 텍스트 노드 추가하기
       div.appendChild(txt);
 
-
+33. 엘리먼트 노드: 추가(appendChild, append, innerHTML)/ 삭제(removeChild,remove) 그리고 주의할 점들
 
 
