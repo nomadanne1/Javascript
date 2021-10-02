@@ -97,4 +97,11 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
 
 33. 엘리먼트 노드: 추가(appendChild, append, innerHTML)/ 삭제(removeChild,remove) 그리고 주의할 점들
 
+34. 노드 복제 및 템플릿 복제
+
+[ 노드복제 ]
+-  var cloneNode = trNode.cloneNode(true); // true: deep 복제
+
+[ 템플릿 복제 ]
+- var cloneNode = document.importNode(template.content, true);
 
