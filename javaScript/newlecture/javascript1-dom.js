@@ -1,4 +1,99 @@
-// Ex7 :
+// Ex8 : 노드 삽입과 바꾸기
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section8");
+
+    var noticeList = section.querySelector(".notice-list");
+    var tbodyNode = noticeList.querySelector("tbody");
+    var upButton = section.querySelector(".up-button");
+    var downButton = section.querySelector(".down-button");
+    
+    var currentNode = tbodyNode.firstElementChild //.children[0]
+
+    downButton.onclick = function(){
+        var nextNode = currentNode.nextElementSibling;
+
+        if(nextNode == null){
+            alert("더 이상 이동할 수 없습니다.");
+            return;
+        }
+
+        // tbodyNode.removeChild(nextNode); 
+        // tbodyNode.insertBefore(nextNode, currentNode);
+
+        currentNode.insertAdjacentElement("beforebegin", nextNode);
+    };
+
+    upButton.onclick = function(){
+        var prevNode = currentNode.previousElementSibling;
+
+        if(prevNode == null){
+            alert("더 이상 이동할 수 없습니다.")
+            return;
+        }
+
+        // tbodyNode.removeChild(currentNode);
+        // tbodyNode.insertBefore(currentNode, prevNode);   
+        
+        currentNode.insertAdjacentElement("afterend", prevNode);
+    };
+});
+
+// Ex6 : 노드조작- 메뉴추가(createTextNode, Element)
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section6");
+    
+    var titleInput = section.querySelector(".title-input");
+    var menuListUI = section.querySelector(".menu-list");
+    var addButton = section.querySelector(".add-button");
+    var delButton = section.querySelector(".del-button");
+
+    addButton.onclick = function(){
+        var title = titleInput.value;
+
+        var html = '<a href="">'+title+'</a>';
+        var li = document.createElement("li");
+        li.innerHTML = html;
+
+        // menuListUI.appendChild(li); 
+        
+        // menuListUI.appendChild(title); // 오류 (createTextNode 필수)
+        menuListUI.append(title); // append는 문자열도 바로 가능 !!
+        menuListUI.append(li); // append는 문자열도 바로 가능 !!
+
+        // menuListUI.innerHTML += '<li><a href="">'+title+'</a></li>'; // 성능에 문제.
+
+        /*
+        // 이렇게 만드는 경우 없음 !!
+        var title = titleInput.value;
+        var txtNode = document.createTextNode(title);
+        
+        var aNode = document.createElement("a");
+        aNode.href="";
+        aNode.appendChild(txtNode);
+
+        var liNode = document.createElement("li");
+        liNode.appendChild(aNode);
+
+        menuListUI.appendChild(liNode);
+        */
+
+        // var title = titleInput.value;
+        // var txtNode = document.createTextNode(title);
+        // menuListDiv.appendChild(txtNode);
+    };
+
+    delButton.onclick = function(){
+        // var txtNode = menuListUI.childNodes[0];
+        var liNode = menuListUI.children[0];
+        // menuListUI.removeChild(txtNode);
+
+        liNode.remove(); // 부모를 통할 필요없이 내가 삭제 가능 !!
+    };
+});
+
+
+
+// Ex7 : 노드 복제와 템플릿 태그
 window.addEventListener("load", function(){
     var notices = [
         {id:5, title:"힣", regDate:"2021-01-01", writerId:"이국희", hit:1},
