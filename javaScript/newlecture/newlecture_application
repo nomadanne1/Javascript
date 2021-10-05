@@ -117,6 +117,8 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
 - targetElement.insertAdjacentElement(position, element);
   position : beforebegin, afterbegin, beforeend, afterend
 
-  36. 다중 엘리먼트 선택방법과 일괄 삭제
+36. 다중 엘리먼트 선택방법과 일괄 삭제
 
+37. 두 엘리먼트의 자리 바꾸기
+- replaceChild / replaceWith(나 쟤랑 바꿔줘)
   

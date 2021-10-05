@@ -20,7 +20,7 @@ window.addEventListener("load", function(){
     };
 
     delButton.onclick = function(){
-        // 체크된것만 가젿오기 :checked
+        // 체크된것만 가져오기 :checked
         var inputs = tbody.querySelectorAll("input[type='checkbox']:checked");
 
         // console.log(inputs.length);
@@ -34,7 +34,27 @@ window.addEventListener("load", function(){
     };
 
     swapButton.onclick = function(){
-   
+        var inputs = tbody.querySelectorAll("input[type='checkbox']:checked");
+
+        if(inputs.length != 2 ){
+            alert("엘리먼트는 2개를 선택해야만 합니다.");
+            return;
+        }
+
+        var trs = []; 
+        for(var i=0; i<inputs.length; i++)
+            trs.push(inputs[i].parentElement.parentElement)
+
+        // trs에 담겨진 tr을 서로 맞 바꾼다.
+        // insertBefore, replaceChild / replaceWith(나 쟤랑 바꿔줘)
+            
+        // replaceWith
+        // 1. trs[0] clone해서 trs[0]복제본이랑 trs[1]이랑 바꾸고 
+        // 2. 튕겨져나온 trs[1]이랑 trs[0]이랑 바꾼다
+
+        var cloneNode = trs[0].cloneNode(true);
+        trs[1].replaceWith(cloneNode);
+        trs[0].replaceWith(trs[1]);        
     };
 });
 
