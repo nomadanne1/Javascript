@@ -1,3 +1,45 @@
+// Ex10 : 클릭한 컬럼을 기준으로 레코드 정렬하기 #1
+window.addEventListener("load", function(){
+    var notices = [
+        {id:1, title:"뚜두둥", regDate:"2021-01-01", writerId:"이국희", hit:1},
+        {id:2, title:"헤헷", regDate:"2021-01-01", writerId:"이웬디", hit:7},
+        {id:3, title:"좋아요", regDate:"2021-01-01", writerId:"쿠쿠", hit:0},
+        {id:4, title:"냉무", regDate:"2021-01-01", writerId:"이웬디", hit:0}
+    ];
+
+    var section = document.querySelector("#section10");
+
+    var noticeList = section.querySelector(".notice-list");
+    var titleTd = section.querySelector(".title");
+    var tbodyNode = noticeList.querySelector("tbody");
+
+    var bindData = function(){
+        var template = section.querySelector("template");
+
+        for(var i=0; i<notices.length; i++){
+            var cloneNode = document.importNode(template.content, true);
+            var tds = cloneNode.querySelectorAll("td");
+            tds[0].textContent = notices[i].id;
+            
+            var aNode = tds[1].children[0];
+            aNode.href = notices[i].id;
+            aNode.textContent = notices[i].title;
+
+            tds[2].textContent = notices[i].regDate;
+            tds[3].textContent = notices[i].writerId;
+            tds[4].textContent = notices[i].hit;
+
+            tbodyNode.appendChild(cloneNode);            
+        }
+    };
+
+    bindData();
+
+    titleTd.onclick = function(){
+
+    }
+});
+
 // Ex9 : 다중 노드선택 방법과 일괄삭제, 노드의 자리바꾸기
 window.addEventListener("load", function(){
     var section = document.querySelector("#section9");
@@ -151,8 +193,6 @@ window.addEventListener("load", function(){
     };
 });
 
-
-
 // Ex7 : 노드 복제와 템플릿 태그
 window.addEventListener("load", function(){
     var notices = [
@@ -188,6 +228,7 @@ window.addEventListener("load", function(){
 
     templateButton.onclick = function(){
         var template = section.querySelector("template");
+
         var cloneNode = document.importNode(template.content, true);
         var tds = cloneNode.querySelectorAll("td");
         tds[0].textContent = notices[0].id;
