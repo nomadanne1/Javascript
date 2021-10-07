@@ -123,3 +123,42 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
 - replaceChild / replaceWith(나 쟤랑 바꿔줘)
   
 38. 제목으로 내용 정렬하기
+
+39. 이벤트와 이벤트 객체
+
+  [ 이벤트 객체 ]
+  
+  - 이벤트에서 발생한 부가 정보를 제공
+  - 클릭했어요 > 어느위치를? 누가 클릭한거야?
+  - 키가 눌렸어요 > 어디에서? 어떤키가? 어떤 키와 함께?
+
+  [ 이벤트 종류에 따른 이벤트 객체 ]
+
+  - The Event interface:
+    NONE constant
+    CAPTURING_PHASE constant
+    AT_TARGET constant
+    BUBBLING_PHASE constant
+    type attribute
+    target attribute
+    currentTarget attribute
+    eventPhase attribute
+    bubbles attribute
+    cancelabe attribute
+    timeStamp attribute
+    defaultPrevented attribute
+    isTrusted attribute
+    stopPropagation() 메소드
+    stopImmediatePropagation() 메소드
+    preventDefault() 메소드
+    initEvent() 메소드
+
+  - The EventTarget interface:
+    addEventListener() 메소드
+    removeEventListener() 메소드
+    dispatchEvent() 메소드
+
+  - The CustomEvent interface:
+    initCustomEvent() 메소드
+    detail attribute
+

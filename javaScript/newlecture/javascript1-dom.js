@@ -35,7 +35,32 @@ window.addEventListener("load", function(){
 
     bindData();
 
+    var titleSorted = false;
+
     titleTd.onclick = function(){
+
+        tbodyNode.innerHTML = "";
+
+        // array.sort() (~~기준으로 정렬)
+            // - 오름차순 정렬 방법
+
+        // 정렬은 한번만 해주면 됨
+        // 그다음은 뒤집고 원래대로 뒤집고 원래대로 (요런식으로)
+        if(!titleSorted)
+        notices.sort(function(a,b){
+                titleSorted = true; // 정렬하면 true로 변경     
+                if(a.title < b.title)
+                    return -1;
+                else if(a.title > b.title)
+                    return 1;
+                else 
+                    return 0;
+            });
+        else
+            // 오름차순으로 정렬한것 뒤집으면 내림차순 정렬
+            notices.reverse(); 
+
+        bindData();
 
     }
 });
