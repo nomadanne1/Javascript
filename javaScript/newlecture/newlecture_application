@@ -127,7 +127,7 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
 39. 이벤트와 이벤트 객체
 
   [ 이벤트 객체 ]
-  
+
   - 이벤트에서 발생한 부가 정보를 제공
   - 클릭했어요 > 어느위치를? 누가 클릭한거야?
   - 키가 눌렸어요 > 어디에서? 어떤키가? 어떤 키와 함께?
@@ -162,3 +162,7 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
     initCustomEvent() 메소드
     detail attribute
 
+40. 이벤트 객체의 target 속성 이용하기
+
+[ 이벤트가 발생한 객체는 event.target ]
+- 클릭한 이미지의 위치 정보 출력하기
