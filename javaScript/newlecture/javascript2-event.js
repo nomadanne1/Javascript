@@ -1,10 +1,38 @@
-// Ex1 : 버블링을 이용한 사용자 이벤트 처리하기 (event target)
+// Ex3 : 이벤트 버블링 멈추기
 window.addEventListener("load", function(){
 
     var section = document.querySelector("#section3");
 
+    var imgList = section.querySelector(".img-list");
+    var addButton = section.querySelector(".add-button");
+    var currentImg = section.querySelector(".current-img");
+
+    imgList.onclick = function(e) {
+        console.log("imgList.onclick");
+        if(e.target.nodeName !="IMG" ) return;
+
+        currentImg.src = e.target.src;
+    }
+
+    // .imgList 클릭> addButton도 같이 클릭된다 (버블링)
+    addButton.onclick = function(e){
+        e.stopPropagation();
+        
+        console.log("addButton.onclick"); 
+        var img = document.createElement("img");
+        img.src = "images/img1.png";
+        currentImg.insertAdjacentElement("afterend", img);
+    }
+
+});
+
+// Ex2 : 버블링을 이용한 사용자 이벤트 처리하기 (event target)
+window.addEventListener("load", function(){
+
+    var section = document.querySelector("#section2");
+
     // var imgs = section.querySelectorAll(".img");
-    var imgList = section.querySelector(".img-list")
+    var imgList = section.querySelector(".img-list");
     var currentImg = section.querySelector(".current-img");
 
     imgList.onclick = function(e) {
