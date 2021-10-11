@@ -1,3 +1,37 @@
+// Ex4 : 서로 다른 기능의 여러 버튼을 가진 화면에서 이벤트를 처리하는 방법
+window.addEventListener("load", function(){
+
+    var section = document.querySelector("#section4");
+
+    var tbody = section.querySelector(".notice-list tbody");
+
+    tbody.onclick = function(e){
+        var target = e.target;
+
+        if(target.nodeName != "INPUT") // (대문자)
+            return;
+
+        // target.className = "sel-button aa bb" 
+        // 클래스 full name 적어줘야 한다.
+        
+        // cf. classList.remove / classList.add 
+        if(target.classList.contains("sel-button")){
+            // var tr = target.parentElement.parentElement;
+            // (구조가 좀만 달라져도 위험 부담이 생긴다.)
+            var tr = target.parentElement;
+            for(; tr.nodeName !="TR"; tr=tr.parentElement);
+
+            tr.style.background = "purple";
+
+        }else if(target.classList.contains("edit-button")){
+            
+        }else if(target.classList.contains("del-button")){
+
+        }
+
+    };
+})
+
 // Ex3 : 이벤트 버블링 멈추기
 window.addEventListener("load", function(){
 

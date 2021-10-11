@@ -171,3 +171,5 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
 
 42. 이벤트 버블링 멈추기
   e.stopPropagation();
+
+43. 여러 버튼을 가진 화면에서 이벤트를 처리하는 방법
