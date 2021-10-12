@@ -6,10 +6,16 @@ window.addEventListener("load", function(){
     var tbody = section.querySelector(".notice-list tbody");
 
     tbody.onclick = function(e){
+
+        e.preventDefault();
+
         var target = e.target;
 
-        if(target.nodeName != "INPUT") // (대문자)
+        if(target.nodeName != "A" && target.nodeName != "INPUT") // (대문자)
             return;
+
+        // if(target.nodeName != "INPUT") // (대문자)
+        //     return;
 
         // target.className = "sel-button aa bb" 
         // 클래스 full name 적어줘야 한다.
