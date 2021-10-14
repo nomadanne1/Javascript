@@ -187,3 +187,28 @@ txt.style.border = "10px solid red"; // style이 가지고 있는 속성
     키가 눌렸어요!! 어디에서?? 어던 키가?? 어떤 키와 함께??
 
     [window.]event 객체
+
+46. DOM 이벤트 트리거 - .dispatchEvent(e)
+
+불편한 문제 : 컨트롤 중에 스타일이 적용되지 않는 컴포넌트 
+
+* 파일 선택 상자를 대신하는 <span />태그 사용
+.gallery-file{
+  display: none;
+}
+<div>
+  <input type="file" id="gallery-file" class="gallery-file" /> // display: none
+  <span id="file-button" class="file-button">파일선택</span>
+</div>
+
+** clcik 이벤트 트리거 구현코드 - 웹 표준 방식
+var fileButton = document.getElementById("file-button");
+fileButton.addEventListener("click", function(){
+  var event = new MouseEvent("click", {
+    'view':window,
+    'bubbles':true,
+    'cancelable':true
+  });
+  var file = document.getElementById("gallery-file");
+  file.dispatchEvent(event);
+})l
