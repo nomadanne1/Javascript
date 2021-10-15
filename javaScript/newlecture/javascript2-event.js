@@ -1,3 +1,15 @@
+// Ex5 : DOM 이벤트 트리거
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section5");
+    var fileButton = section.querySelector(".file-button");
+    var fileTrigerButton = section.querySelector(".file-trigger-button");
+
+    fileTrigerButton.onclck = function(){
+        alert("test");
+    }
+
+});
+
 // Ex4 : 서로 다른 기능의 여러 버튼을 가진 화면에서 이벤트를 처리하는 방법
 window.addEventListener("load", function(){
 

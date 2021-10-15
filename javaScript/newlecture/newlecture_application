@@ -211,4 +211,9 @@ fileButton.addEventListener("click", function(){
   });
   var file = document.getElementById("gallery-file");
   file.dispatchEvent(event);
-})l
+});
+
+47. DOM 이벤트 트리거 구현하기
+
+
+
