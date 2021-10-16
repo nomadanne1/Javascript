@@ -216,4 +216,6 @@ fileButton.addEventListener("click", function(){
 47. DOM 이벤트 트리거 구현하기
 
 
+48. 클릭 위치에 박스 옮기기 (마우스 이벤트 객체 사용하기 #1)
 
+- 마우스가 클릭되는 위치로 박스 옮기기

@@ -1,13 +1,33 @@
+// Ex6 : 마우스 이벤트 객체 - 마우스 좌표
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section6");
+    var container = section.querySelector(".container");
+    var box = section.querySelector(".box");
+
+    container.onclick = function(e){
+        // e객체: 좌표등 얻을 수 있음..
+        // e.x, x.y / e.offsetX, e.offsetY / e.clientX, e.pageX ...
+        console.log("(x.y):"+e.x+","+e.y);
+        box.style.position = "absolute";
+        box.style.left = e.x+"px";
+        box.style.top = e.y+"px";
+    };
+});
+
 // Ex5 : DOM 이벤트 트리거
 window.addEventListener("load", function(){
     var section = document.querySelector("#section5");
     var fileButton = section.querySelector(".file-button");
-    var fileTrigerButton = section.querySelector(".file-trigger-button");
+    var fileTriggerButton = section.querySelector(".file-trigger-button");
 
-    fileTrigerButton.onclck = function(){
-        alert("test");
+    fileTriggerButton.onclick = function(){
+        var event = new MouseEvent("click", {
+            'view':window,
+            'bubbles':true,
+            'cancelable':true
+        })
+        fileButton.dispatchEvent(event);
     }
-
 });
 
 // Ex4 : 서로 다른 기능의 여러 버튼을 가진 화면에서 이벤트를 처리하는 방법
