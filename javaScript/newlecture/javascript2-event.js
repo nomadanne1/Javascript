@@ -8,6 +8,9 @@ window.addEventListener("load", function(){
         // e객체: 좌표등 얻을 수 있음..
         // e.x, x.y / e.offsetX, e.offsetY / e.clientX, e.pageX ...
         console.log("(x.y):"+e.x+","+e.y);
+        console.log("clinet (x.y):"+e.clientX+","+e.clientY);
+        console.log("page (x.y):"+e.pageX+","+e.pageY);
+        console.log("offset (x.y):"+e.offsetX+","+e.offsetY);
         box.style.position = "absolute";
         box.style.left = e.x+"px";
         box.style.top = e.y+"px";
