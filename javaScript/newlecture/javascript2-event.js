@@ -1,3 +1,38 @@
+// Ex7 : 마우스 이벤트 객체 - 드래그 방식으로 박스 옮기기
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section7");
+    var container = section.querySelector(".container");
+    var box = section.querySelector(".box");
+    var dragging = false;
+    var offset = {x:0, y:0};
+
+    // 1. 박스를 선택하고, 
+    // 2. 드래그 할때!!
+    // *박스 선택할때 마우스가 꼭짓점으로  붙어 가는 현상 
+    //  => offset 좌표 !!
+    container.onmousedown = function(e){
+        if(e.target === box) // 박스를 선택
+        dragging = true; // 드래그!!
+    };
+
+    container.onmousemove = function(e){
+        if(!dragging) return;
+        box.style.left = e.pageX-offset.x+"px";
+        box.style.top = e.pageY-offset.y+"px";
+    };
+
+    container.onmouseup = function(e){
+        dragging = false;
+
+    };
+
+    box.onmousedown = function(e){
+        // box로 부터의 offsetX, offsetY
+        offset.x = e.offsetX;
+        offset.y = e.offsetY;
+    }
+});
+
 // Ex6 : 마우스 이벤트 객체 - 마우스 좌표
 window.addEventListener("load", function(){
     var section = document.querySelector("#section6");
