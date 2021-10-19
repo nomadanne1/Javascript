@@ -1,3 +1,32 @@
+// Ex8 : 마우스 이벤트 객체 - 여러개 박스 드래그 방식을 옮기기
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section8");
+    var container = section.querySelector(".container");
+    var box = section.querySelector(".box");
+    var dragging = false;
+    var offset = {x:0, y:0};
+    var current = null;
+
+    container.onmousedown = function(e){ // .container - 이벤트 버블링
+        if(e.target.classList.contains("box")) {
+            dragging = true; 
+            current = e.target; // 현재 선택된것 !
+            offset.x = e.offsetX;
+            offset.y = e.offsetY;
+        }
+    };
+
+    container.onmousemove = function(e){
+        if(!dragging) return;
+        current.style.left = e.pageX-offset.x+"px"; // 이동할 대상> 현재 선택된 것!!
+        current.style.top = e.pageY-offset.y+"px";
+    };
+
+    container.onmouseup = function(e){
+        dragging = false;
+    };
+});
+
 // Ex7 : 마우스 이벤트 객체 - 드래그 방식으로 박스 옮기기
 window.addEventListener("load", function(){
     var section = document.querySelector("#section7");
