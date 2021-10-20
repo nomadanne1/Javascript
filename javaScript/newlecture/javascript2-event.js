@@ -10,7 +10,8 @@ window.addEventListener("load", function(){
     var left = container.offsetLeft;
     var top = container.offsetTop;
 
-    container.onmousedown = function(e){ // .container - 이벤트 버블링
+    // container.onmousedown = function(e){  // .container - 이벤트 버블링
+    document.onmousedown = function(e){ 
         if(e.target.classList.contains("box")) {
             dragging = true; 
             current = e.target; // 현재 선택된것 !
@@ -19,7 +20,8 @@ window.addEventListener("load", function(){
         }
     };
 
-    container.onmousemove = function(e){
+    // container.onmousemove = function(e){
+        document.onmousemove = function(e){
         if(!dragging) return;
 
         // var x = e.pageX-offset.x;
@@ -43,8 +45,9 @@ window.addEventListener("load", function(){
 
         status.innerText = `(x, y) : (${x}, ${y})`;
     };
-    
-    container.onmouseup = function(e){
+
+    // container.onmouseup = function(e){ 
+        document.onmouseup = function(e){ 
         dragging = false;
     };
 });
