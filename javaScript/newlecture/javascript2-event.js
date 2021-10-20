@@ -1,8 +1,58 @@
+// Ex9 : 박스의 옵셋 영역 좌표 이용하기
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section9");
+    var container = section.querySelector(".container");
+    var status = section.querySelector(".status");
+    var dragging = false;
+    var offset = {x:0, y:0};
+    var current = null;
+
+    var left = container.offsetLeft;
+    var top = container.offsetTop;
+
+    container.onmousedown = function(e){ // .container - 이벤트 버블링
+        if(e.target.classList.contains("box")) {
+            dragging = true; 
+            current = e.target; // 현재 선택된것 !
+            offset.x = e.offsetX;
+            offset.y = e.offsetY;
+        }
+    };
+
+    container.onmousemove = function(e){
+        if(!dragging) return;
+
+        // var x = e.pageX-offset.x;
+        // var y = e.pageY-offset.y;
+        // 1. page 기준 x, y가 아닌 
+        // .container 기준 x, y이 바람직 하다
+        
+        // var x = e.offsetX - offset.x;
+        // var y = e.offsetY - offset.y;
+        // 2. 그러나 이벤트 버블링으로 onmousemove 이벤트가
+        // .container, .box 2번실행돼서 깜빡깜빢거리는 문제 발생
+
+        // 3. 해결) .container 왼쪽 모서리가 
+        // (시작점) 0 ,0 좌표가 될수있도록 한다.
+        // => 박스의 왼쪽 모서리의 좌표를 구해서 뺴준다.
+        var x = e.pageX-offset.x-left;
+        var y = e.pageY-offset.y- top;
+
+        current.style.left = x+"px"; // 이동할 대상> 현재 선택된 것!!
+        current.style.top = y+"px";
+
+        status.innerText = `(x, y) : (${x}, ${y})`;
+    };
+    
+    container.onmouseup = function(e){
+        dragging = false;
+    };
+});
+
 // Ex8 : 마우스 이벤트 객체 - 여러개 박스 드래그 방식을 옮기기
 window.addEventListener("load", function(){
     var section = document.querySelector("#section8");
     var container = section.querySelector(".container");
-    var box = section.querySelector(".box");
     var dragging = false;
     var offset = {x:0, y:0};
     var current = null;

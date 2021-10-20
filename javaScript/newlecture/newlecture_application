@@ -220,7 +220,7 @@ fileButton.addEventListener("click", function(){
 
 49. 마우스 이벤트 좌표 3가지 구분하기
 
-  1. 패이지 영역
+  1. 페이지 영역
   2. 클라이언트 영역 (화면에 보여지는 영역) < 페이지 영역
     - e.x, e.y
   3. 옵셋(offset) 영역 
@@ -229,3 +229,9 @@ fileButton.addEventListener("click", function(){
 
 51. 여러 개의 박스 드래그 하기
   - e.target.classList.contains("box")
+
+52. 박스의 옵셋 좌표 이용하기
+
+    **박스의 왼쪽 모서리 좌표값
+    var left = container.offsetLeft;
+    var top = container.offsetTop;
