@@ -242,3 +242,5 @@ fileButton.addEventListener("click", function(){
      onmousedown을 인지 못해서 드래그 상태라고 생각하고 박스가 마우스를 따라 이동.
   2. 이벤트영역(.container) 밖에서 이벤트 발생시 container전달 안됨
   3. 이벤트영역을 .container에서 document로 확장하면 해결.
+
+54. DND API #1 : draggable 설정
